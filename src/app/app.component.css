@@ -1,0 +1,13 @@
+.textonavbar{
+    color:white;
+}
+
+.circle{
+  border: solid 21px white;
+  width:1250px;
+  height:auto;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 25px;
+  border-radius: 20px;
+}
