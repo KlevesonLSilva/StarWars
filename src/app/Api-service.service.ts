@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { Planetas, PlanetasPaginado } from './interface-servico'
+import { PersonagensPaginado, Planetas, PlanetasPaginado, Personagens } from './interface-servico'
 
 
 @Injectable({
@@ -17,7 +17,7 @@ export class ApiServiceService {
   }
 
   list2() {
-    return this.http.get<PlanetasPaginado>(this.API +'planets/');
+    return this.http.get<PersonagensPaginado>(this.API +'people/');
   }
 
 }

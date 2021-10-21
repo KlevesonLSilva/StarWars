@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiServiceService } from '../Api-service.service';
+import { Personagens } from '../interface-servico';
 
 @Component({
   selector: 'app-dados-personagem',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DadosPersonagemComponent implements OnInit {
 
-  constructor() { }
+  personagens: Personagens[] = []
+
+  constructor(private service: ApiServiceService) { }
 
   ngOnInit(): void {
+    this.service.list2().subscribe(retornoDaAPI => {
+      this.personagens = retornoDaAPI.results;
+    })
   }
-
 }
