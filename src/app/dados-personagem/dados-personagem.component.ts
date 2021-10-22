@@ -10,12 +10,19 @@ import { Personagens } from '../interface-servico';
 export class DadosPersonagemComponent implements OnInit {
 
   personagens: Personagens[] = []
+  nome:string;
 
   constructor(private service: ApiServiceService) { }
 
   ngOnInit(): void {
     this.service.list2().subscribe(retornoDaAPI => {
       this.personagens = retornoDaAPI.results;
+    })
+  }
+  buscaPersonagens() {
+    debugger
+    this.service.buscaPersonagens(this.nome).subscribe(retornoAPI => {
+      this.personagens = retornoAPI.results;
     })
   }
 }

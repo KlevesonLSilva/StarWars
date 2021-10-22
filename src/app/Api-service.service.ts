@@ -20,4 +20,13 @@ export class ApiServiceService {
     return this.http.get<PersonagensPaginado>(this.API +'people/');
   }
 
+  buscaPersonagens(personagens){
+    return this.http.get<PersonagensPaginado>(this.API +'people/?search=' + personagens);
+  }
+
+  buscaPlaneta(planetas){
+    return this.http.get<PlanetasPaginado>(this.API +'planets/?search='+ planetas);
+  }
+  
+
 }

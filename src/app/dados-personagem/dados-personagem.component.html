@@ -1,14 +1,20 @@
 <h1 class="text-center text-white"> Personagens</h1>
+<div class="offset-8 col-sm-4  ">
+  <form class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar"[(ngModel)]="nome" [ngModelOptions]="{standalone: true}">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="buscaPersonagens()">Buscar</button>
+  </form>
+</div>
 <div class="row col-sm-12">
+  <h1 class="text-white col-sm-12">Quantidade de itens na lista:{{personagens.length}}</h1><br/>
   <div class="col-sm-2 circle text-white" *ngFor="let personagens of personagens">
-   <p>Name: {{personagens.name}} </p>
-    <p>Altura:{{personagens.height}}</p> 
+    <p>Name: {{personagens.name}} </p>
+    <p>Altura:{{personagens.height}}</p>
     <p>Peso: {{personagens.mass}}</p>
     <p>:Cor do cabelo:{{personagens.hair_color}}</p>
-    <p>Caor da pele:{{personagens.skin_color}}</p> 
-    <p>Cor dos olhos:{{personagens.eye_color}}</p> 
-    <p>idade:{{personagens.birth_year}}</p> 
-    <p>Sexo: {{personagens.gender}}</p>  
-  </div>  
+    <p>Caor da pele:{{personagens.skin_color}}</p>
+    <p>Cor dos olhos:{{personagens.eye_color}}</p>
+    <p>idade:{{personagens.birth_year}}</p>
+    <p>Sexo: {{personagens.gender}}</p>
+  </div>
 </div>
-

@@ -1,5 +1,14 @@
 <h1 class="text-center text-white"> Planetas</h1>
+<div>
+  <div class="offset-8 col-sm-4  ">
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar" [(ngModel)]="nome" [ngModelOptions]="{standalone: true}">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="button"(click)="buscarPlaneta()">Buscar</button>
+    </form>
+</div>
+
 <div class="row col-sm-12">
+  <h1 class="text-white col-sm-12">Quantidade de itens na lista:{{planetas.length}}</h1><br/>  
   <div class="col-sm-2 circle text-white" *ngFor="let planeta of planetas">
    <p>Name: {{planeta.name}} </p>
     <p>Tamanho:{{planeta.rotation_period}}</p> 

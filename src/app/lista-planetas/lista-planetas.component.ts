@@ -11,6 +11,7 @@ import { Planetas } from '../interface-servico';
 export class ListaPlanetasComponent implements OnInit {
 
   planetas: Planetas[] = []
+  nome:string;
 
   constructor(private service: ApiServiceService) { }
 
@@ -19,5 +20,15 @@ export class ListaPlanetasComponent implements OnInit {
       this.planetas = retornoDaAPI.results;
     })
   }
+  buscarPlaneta(){
+    debugger
+    this.service.buscaPlaneta(this.nome).subscribe(retornoDaAPI =>{
+      this.planetas = retornoDaAPI.results;
+    })
 
-}
+    }
+  }
+
+
+
+
